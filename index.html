@@ -50,6 +50,19 @@
         .lab-files, #welcome-text {
             display: none;
         }
+
+        #tab-none:checked ~ .main-content #welcome-text {
+            display: block;
+        }
+
+        #tab1:checked ~ .main-content #lab1,
+        #tab2:checked ~ .main-content #lab2,
+        #tab3:checked ~ .main-content #lab3,
+        #tab4:checked ~ .main-content #lab4,
+        #tab5:checked ~ .main-content #lab5,
+        #tab6:checked ~ .main-content #lab6 {
+            display: block;
+        }
         
     </style>
 </head>
