@@ -1,0 +1,18 @@
+table {
+    width: 100%;
+    background-color: aqua;
+}
+th {
+    background-color: plum;
+    color: rgb(110, 214, 255);
+}
+td, th {
+    padding: 5px 10px;
+    border: 2px solid black;
+}
+caption {
+    font-family: 'Times New Roman', Times, serif;
+    color: rgba(255, 124, 196, 0.137);
+}
+
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Формы</title>
+</head>
+<body>
+    <h1>Формы:</h1>
+    <h2>Форма заявки на услугу</h2>
+    <form action="#" method="post">
+        <label for="fio">ФИО:</label>
+        <input type="text" id="fio" name="fio"><br><br>
+        
+        <label for="emails">Email:</label>
+        <input type="email" id="emails" name="emails"><br><br>
+        
+        <p>Тип услуги:</p>
+        <input type="radio" id="usl1" name="usluga" value="ремонт">
+        <label for="usl1">Ремонт</label><br>
+        <input type="radio" id="usl2" name="usluga" value="доставка">
+        <label for="usl2">Доставка</label><br><br>
+        
+        <input type="checkbox" id="sogl" name="sogl" checked>
+        <label for="sogl">Согласие на обработку данных</label><br><br>
+        
+        <label for="comments">Комментарий:</label><br>
+        <textarea id="comments" name="comments" rows="4" cols="30"></textarea><br><br>
+        
+        <input type="submit" value="Отправить заявку">
+        <input type="reset" value="Очистить">
+    </form>
+    
+    <h2>Форма анкеты "Опросник"</h2>
+    <form action="#" method="get">
+        <label for="age">Возраст:</label>
+        <input type="text" id="age" name="age" maxlength="3"><br><br>
+        
+        <label for="city">Город:</label>
+        <select id="city" name="city">
+            <option value="spb">Санкт-Петербург</option>
+            <option value="msk" selected>Москва</option>
+        </select><br><br>
+        
+        <p>Уровень заселенности вашего города:</p>
+        <input type="radio" id="ud1" name="udovl" value="high">
+        <label for="ud1">Высокий</label><br>
+        <input type="radio" id="ud2" name="udovl" value="low">
+        <label for="ud2">Низкий</label><br><br>
+        
+        <input type="checkbox" id="news" name="news">
+        <label for="news">Получать новости</label><br><br>
+        
+        <label for="feedback">Отзыв:</label><br>
+        <textarea id="feedback" name="feedback" rows="3" cols="30"></textarea><br><br>
+        
+        <input type="submit" value="Отправить анкету">
+    </form>
+
+    <h2>Форма регистрации</h2>
+    <form action="#" method="post">
+        <label for="login">Логин:</label>
+        <input type="text" id="login" name="login"><br><br>
+        
+        <label for="pass">Пароль:</label>
+        <input type="password" id="pass" name="pass"><br><br>
+        
+        <label for="emails">Email:</label>
+        <input type="email" id="emails" name="emails"><br><br>
+        
+        <p>Пол:</p>
+        <input type="radio" id="male" name="pol" value="m">
+        <label for="male">Мужской</label><br>
+        <input type="radio" id="female" name="pol" value="f">
+        <label for="female">Женский</label><br><br>
+        
+        <label for="role">Роль:</label>
+        <select id="role" name="role">
+            <option value="user">Пользователь</option>
+            <option value="admin">Админ</option>
+        </select><br><br>
+        
+        <input type="checkbox" id="rules" name="rules">
+        <label for="rules">Согласен с правилами</label><br><br>
+        
+        <input type="submit" value="Зарегистрироваться">
+        <input type="reset" value="Очистить форму">
+    </form>
+</body>
+</html>
+    
+

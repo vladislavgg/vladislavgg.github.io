@@ -1,0 +1,64 @@
+@import url("import.css");
+
+h1 {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.my-style {
+    color: yellow;
+    font-weight: bold;
+}
+
+a.my-link:hover {
+    color: red;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a.my-link:active {
+    background-color: purple;
+}
+
+.my-link {
+    color: green;
+    font-size: 20px;
+}
+
+p.intro::first-letter {
+    font-size: 200%;
+    color: red;
+    font-weight: bold;
+}
+
+.marker::after {
+    content: " Зимбабве";
+    color: red;
+    font-style: italic;
+}
+
+.click-me {
+    width: 100px;
+    height: 100px;
+    background-color: gray;
+    cursor: pointer;
+    outline: none;
+    transition: 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.click-me:focus {
+    background-color: orange;
+    transform: scale(1.1);
+}
+
+.click-me::before {
+    content: "Кликни";
+    color: white;
+}
+
+.click-me:focus::before {
+    content: "Готово!";
+}
