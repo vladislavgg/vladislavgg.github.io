@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Табличная верстка</title>
+    <style>
+        @media (max-width: 768px) {
+            table, tbody, tr, td {
+                display: block !important;
+                width: 100% !important;
+            }
+            td {
+                box-sizing: border-box;
+            }
+        }
+    </style>
+</head>
+<body style="margin: 0; font-family: 'Times New Roman', Times, serif;">
+    <table style="width: 100%; border-collapse: collapse; border: 0;">
+        <tr>
+            <td colspan="2" style="background-color: limegreen; padding: 20px;">
+                <h1 style="margin: 0; color: black;">Верхняя часть сайта</h1>
+            </td>
+        </tr>
+        <tr style="vertical-align: top;">
+            <td style="background-color: greenyellow; width: 30%; padding: 15px;">
+                <b>Меню</b><br>пункт 1<br>пункт 2<br>пункт 3
+            </td>
+            <td style="background-color: floralwhite; height: 300px; padding: 15px;">
+                Место для контента
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="background-color: limegreen; text-align: center; padding: 10px;">
+                Подвал сайта
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
