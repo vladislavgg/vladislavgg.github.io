@@ -1,1 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Семантическая верстка</title>
+    <style>
+        body { 
+            margin: 0; 
+            font-family: sans-serif; 
+            background-color: black; 
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; 
+        }
 
+        nav, footer { 
+            background: #999;
+            border: 2px solid #000;
+            padding: 10px;
+            text-align: center;
+            margin: 2px; 
+        }
+
+        header { 
+            background: #999;
+            border: 2px solid #000;
+            padding: 40px;
+            text-align: center; 
+            margin: 2px; 
+        }
+
+        .main { 
+            display: flex;
+            flex: 1;
+            gap: 4px; 
+            margin: 2px; 
+        }
+
+        section { 
+            flex: 3; 
+            border: 2px solid #000; 
+            background: #bbb; 
+            padding: 15px; 
+        }
+        
+        aside { 
+            flex: 1; 
+            border: 2px solid #000;
+            background: #999;
+            padding: 15px; 
+        }
+        
+        article { 
+            background: #fff; 
+            border: 1px solid #000; 
+            padding: 20px; margin-top: 10px; 
+            min-height: 150px; 
+        }
+
+        h3 { background: #000; 
+            color: #fff;
+            padding: 5px; 
+            margin: 0; 
+            text-align: center; 
+        }
+
+        @media (max-width: 768px) {
+            .main {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header> &lt;header&gt; </header>
+    <nav> &lt;nav&gt; </nav>
+
+    <div class="main">
+        <section>
+            &lt;section&gt;
+            <h1>&lt;h1&gt;Заголовок&lt;/h1&gt;</h1>
+            <article>
+                &lt;article&gt;
+            </article>
+        </section>
+
+        <aside>
+            <h3>&lt;h3&gt;</h3>
+            &lt;aside&gt;
+        </aside>
+    </div>
+
+    <footer> &lt;footer&gt; </footer>
+
+</body>
+</html>
