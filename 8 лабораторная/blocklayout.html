@@ -1,1 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Блочная верстка</title>
+    <style>
+        @media (max-width: 768px) {
+            #menu, #content {
+                width: 100% !important;
+                float: none !important;
+                height: auto !important;
+            }
+        }
+    </style>
+</head>
+<body style="margin: 0; font-family: 'Times New Roman', Times, serif;">
+    <div id="container" style="width: 90%; margin: 0 auto;">
+        
+        <div id="header" style="background-color: rgb(131, 255, 82); padding: 10px;">
+            <h1 style="margin-bottom: 0;">Верхняя часть сайта</h1>
+        </div>
 
+        <div id="menu" style="background-color: #effa59; height: 250px; width: 25%; float: left; padding: 10px; box-sizing: border-box;">
+            <b>Меню</b><br>Пункт 1<br>Пункт 2<br>Пункт 3
+        </div>
+
+        <div id="content" style="background-color: #fff; height: 250px; width: 75%; float: left; padding: 10px; box-sizing: border-box; border: 1px solid #ddd;">
+            Место для контента
+        </div>
+
+        <div id="footer" style="background-color: rgb(131, 255, 82); clear: both; text-align: center; padding: 10px;">
+            Подвал сайта
+        </div>
+
+    </div>
+</body>
+</html>
