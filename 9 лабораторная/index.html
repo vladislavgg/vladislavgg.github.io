@@ -50,6 +50,36 @@
             0% { transform: scale(0.3); opacity: 0.2; }
             100% { transform: scale(1.2); opacity: 0.5; }
         }
+
+        .right-side {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .row {
+            display: flex;
+            gap: 15px;
+        }
+
+        .obj {
+            width: 60px;
+            height: 60px;
+            background: #3498db;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            transition: 0.4s;
+        }
+
+        .obj:nth-child(1):hover { transform: rotate(90deg); }
+        .obj:nth-child(2):hover { transform: scale(1.2); }
+        .obj:nth-child(3):hover { transform: skewX(20deg); }
+        .obj:nth-child(4):hover { transform: translateY(-10px); }
+        .obj:nth-child(5):hover { transform: rotate(180deg) scale(0.6); }
         
     </style>
 </head>
