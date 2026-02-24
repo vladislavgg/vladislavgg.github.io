@@ -10,6 +10,7 @@
             padding: 0;
             height: 100vh;
             font-family: sans-serif;
+            overflow: hidden;
         }
 
         input[type="radio"] {
@@ -22,6 +23,7 @@
             border-right: 1px solid #ccc;
             padding: 20px;
             box-sizing: border-box;
+            overflow-y: auto;
         }
 
         .main-content {
@@ -29,6 +31,7 @@
             padding: 30px;
             box-sizing: border-box;
             position: relative;
+            overflow-y: auto;
         }
 
         .lab-button {
@@ -41,6 +44,7 @@
             cursor: pointer;
             text-align: left;
             box-sizing: border-box;
+            border-radius: 4px;
         }
 
         .lab-button:hover {
@@ -51,37 +55,64 @@
             display: none;
         }
 
-        #tab-none:checked ~ .main-content #welcome-text {
-            display: block;
-        }
-
+        /* Логика переключения вкладок */
+        #tab-none:checked ~ .main-content #welcome-text { display: block; }
         #tab1:checked ~ .main-content #lab1,
         #tab2:checked ~ .main-content #lab2,
         #tab3:checked ~ .main-content #lab3,
         #tab4:checked ~ .main-content #lab4,
         #tab5:checked ~ .main-content #lab5,
         #tab6:checked ~ .main-content #lab6,
-		#tab7:checked ~ .main-content #lab7,
-		#tab8:checked ~ .main-content #lab8,
-		#tab9:checked ~ .main-content #lab9 {
+        #tab7:checked ~ .main-content #lab7,
+        #tab8:checked ~ .main-content #lab8,
+        #tab9:checked ~ .main-content #lab9 {
             display: block;
         }
 
+        /* Контейнер для строки файла */
+        .file-row {
+            display: flex;
+            align-items: stretch;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
         .file-link {
+            flex-grow: 1;
             display: block;
-            margin: 10px 0;
-            padding: 10px;
+            padding: 12px;
             background-color: #f9f9f9;
             border: 1px dashed #aaa;
             color: blue;
             text-decoration: none;
+            transition: 0.2s;
         }
 
         .file-link:hover {
             background-color: #eee;
         }
 
-        h2 { border-bottom: 2px solid #333; padding-bottom: 5px; }
+        .result-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 20px;
+            background-color: #28a745;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: bold;
+            white-space: nowrap;
+            transition: background 0.2s;
+        }
+
+        .result-link:hover {
+            background-color: #218838;
+        }
+
+        h2 { border-bottom: 2px solid #333; padding-bottom: 5px; margin-top: 0; }
+        h3 { color: #555; }
     </style>
 </head>
 <body>
@@ -93,9 +124,9 @@
     <input type="radio" name="labs" id="tab4">
     <input type="radio" name="labs" id="tab5">
     <input type="radio" name="labs" id="tab6">
-	<input type="radio" name="labs" id="tab7">
-	<input type="radio" name="labs" id="tab8">
-	<input type="radio" name="labs" id="tab9">
+    <input type="radio" name="labs" id="tab7">
+    <input type="radio" name="labs" id="tab8">
+    <input type="radio" name="labs" id="tab9">
 
     <div class="sidebar">
         <h2>Мои работы</h2>
@@ -105,9 +136,9 @@
         <label class="lab-button" for="tab4">Лабораторная работа №4</label>
         <label class="lab-button" for="tab5">Лабораторная работа №5</label>
         <label class="lab-button" for="tab6">Лабораторная работа №6</label>
-		<label class="lab-button" for="tab7">Лабораторная работа №7</label>
-		<label class="lab-button" for="tab8">Лабораторная работа №8</label>
-		<label class="lab-button" for="tab9">Лабораторная работа №9</label>
+        <label class="lab-button" for="tab7">Лабораторная работа №7</label>
+        <label class="lab-button" for="tab8">Лабораторная работа №8</label>
+        <label class="lab-button" for="tab9">Лабораторная работа №9</label>
     </div>
 
     <div class="main-content">
@@ -117,66 +148,144 @@
 
         <div id="lab1" class="lab-files">
             <h2>Лабораторная работа №1</h2>
-            <a class="file-link" target="_blank" href="https://github.com/vladislavgg/vladislavgg.github.io/blob/main/1 лабораторная/first.html">Посмотреть код: first.html</a>
-            <a class="file-link" target="_blank" href="https://github.com/vladislavgg/vladislavgg.github.io/blob/main/1 лабораторная/second.html">Посмотреть код: second.html</a>
-            <a class="file-link" target="_blank" href="https://github.com/vladislavgg/vladislavgg.github.io/blob/main/1 лабораторная/dop.html">Посмотреть код: dop.html</a>
+            <div class="file-row">
+                <a class="file-link" target="_blank" href="https://github.com/vladislavgg/vladislavgg.github.io/blob/main/1 лабораторная/first.html">Посмотреть код: first.html</a>
+                <a class="result-link" target="_blank" href="1 лабораторная/first.html">Результат</a>
+            </div>
+            <div class="file-row">
+                <a class="file-link" target="_blank" href="https://github.com/vladislavgg/vladislavgg.github.io/blob/main/1 лабораторная/second.html">Посмотреть код: second.html</a>
+                <a class="result-link" target="_blank" href="1 лабораторная/second.html">Результат</a>
+            </div>
+            <div class="file-row">
+                <a class="file-link" target="_blank" href="https://github.com/vladislavgg/vladislavgg.github.io/blob/main/1 лабораторная/dop.html">Посмотреть код: dop.html</a>
+                <a class="result-link" target="_blank" href="1 лабораторная/dop.html">Результат</a>
+            </div>
         </div>
 
         <div id="lab2" class="lab-files">
             <h2>Лабораторная работа №2</h2>
-            <a class="file-link" target="_blank" href="https://github.com/vladislavgg/vladislavgg.github.io/blob/main/2 лабораторная/index.html">Посмотреть код: index.html</a>
-            <a class="file-link" target="_blank" href="https://github.com/vladislavgg/vladislavgg.github.io/blob/main/2 лабораторная/import.css">Посмотреть код: import.css</a>
-            <a class="file-link" target="_blank" href="https://github.com/vladislavgg/vladislavgg.github.io/blob/main/2 лабораторная/style.css">Посмотреть код: style.css</a> 
+            <div class="file-row">
+                <a class="file-link" target="_blank" href="https://github.com/vladislavgg/vladislavgg.github.io/blob/main/2 лабораторная/index.html">Посмотреть код: index.html</a>
+                <a class="result-link" target="_blank" href="2 лабораторная/index.html">Результат</a>
+            </div>
+            <div class="file-row">
+                <a class="file-link" target="_blank" href="https://github.com/vladislavgg/vladislavgg.github.io/blob/main/2 лабораторная/import.css">Посмотреть код: import.css</a>
+            </div>
+            <div class="file-row">
+                <a class="file-link" target="_blank" href="https://github.com/vladislavgg/vladislavgg.github.io/blob/main/2 лабораторная/style.css">Посмотреть код: style.css</a>
+            </div>
         </div>
 
         <div id="lab3" class="lab-files">
             <h2>Лабораторная работа №3</h2>
-            <a class="file-link" target="_blank" href="https://github.com/vladislavgg/vladislavgg.github.io/blob/main/3 лабораторная/index.html">Посмотреть код: index.html</a>
-            <a class="file-link" target="_blank" href="https://github.com/vladislavgg/vladislavgg.github.io/blob/main/3 лабораторная/style.css">Посмотреть код: style.css</a>
-			<a class="file-link" target="_blank" href="https://github.com/vladislavgg/vladislavgg.github.io/blob/main/3 лабораторная/verstkaindex.html">Посмотреть код: verstkaindex.html</a>
-			<a class="file-link" target="_blank" href="https://github.com/vladislavgg/vladislavgg.github.io/blob/main/3 лабораторная/verstkastyle.css">Посмотреть код: verstkastyle.css</a>
+            <div class="file-row">
+                <a class="file-link" target="_blank" href="https://github.com/vladislavgg/vladislavgg.github.io/blob/main/3 лабораторная/index.html">Посмотреть код: index.html</a>
+                <a class="result-link" target="_blank" href="3 лабораторная/index.html">Результат</a>
+            </div>
+            <div class="file-row">
+                <a class="file-link" target="_blank" href="https://github.com/vladislavgg/vladislavgg.github.io/blob/main/3 лабораторная/style.css">Посмотреть код: style.css</a>
+            </div>
+            <div class="file-row">
+                <a class="file-link" target="_blank" href="https://github.com/vladislavgg/vladislavgg.github.io/blob/main/3 лабораторная/verstkaindex.html">Посмотреть код: verstkaindex.html</a>
+                <a class="result-link" target="_blank" href="3 лабораторная/verstkaindex.html">Результат</a>
+            </div>
+            <div class="file-row">
+                <a class="file-link" target="_blank" href="https://github.com/vladislavgg/vladislavgg.github.io/blob/main/3 лабораторная/verstkastyle.css">Посмотреть код: verstkastyle.css</a>
+            </div>
         </div>
 
         <div id="lab4" class="lab-files">
             <h2>Лабораторная работа №4</h2>
-            <a class="file-link" target="_blank" href="https://github.com/vladislavgg/vladislavgg.github.io/blob/main/4 лабораторная/index.html">Посмотреть код: index.html</a>
+            <div class="file-row">
+                <a class="file-link" target="_blank" href="https://github.com/vladislavgg/vladislavgg.github.io/blob/main/4 лабораторная/index.html">Посмотреть код: index.html</a>
+                <a class="result-link" target="_blank" href="4 лабораторная/index.html">Результат</a>
+            </div>
         </div>
 
         <div id="lab5" class="lab-files">
             <h2>Лабораторная работа №5</h2>
-            <a class="file-link" target="_blank" href="https://github.com/vladislavgg/vladislavgg.github.io/blob/main/5 лабораторная/index.html">Посмотреть код: index.html</a>
-			<a class="file-link" target="_blank" href="https://github.com/vladislavgg/vladislavgg.github.io/blob/main/5 лабораторная/header.htm">Посмотреть код: header.htm</a>
-			<a class="file-link" target="_blank" href="https://github.com/vladislavgg/vladislavgg.github.io/blob/main/5 лабораторная/infoframe.htm">Посмотреть код: infoframe.htm</a>
-			<a class="file-link" target="_blank" href="https://github.com/vladislavgg/vladislavgg.github.io/blob/main/5 лабораторная/infoframe2.htm">Посмотреть код: infoframe2.htm</a>
-			<a class="file-link" target="_blank" href="https://github.com/vladislavgg/vladislavgg.github.io/blob/main/5 лабораторная/menuframe.htm">Посмотреть код: menuframe.htm</a>
+            <div class="file-row">
+                <a class="file-link" target="_blank" href="https://github.com/vladislavgg/vladislavgg.github.io/blob/main/5 лабораторная/index.html">Посмотреть код: index.html</a>
+                <a class="result-link" target="_blank" href="5 лабораторная/index.html">Результат</a>
+            </div>
+            <div class="file-row">
+                <a class="file-link" target="_blank" href="https://github.com/vladislavgg/vladislavgg.github.io/blob/main/5 лабораторная/header.htm">Посмотреть код: header.htm</a>
+                <a class="result-link" target="_blank" href="5 лабораторная/header.htm">Результат</a>
+            </div>
+            <div class="file-row">
+                <a class="file-link" target="_blank" href="https://github.com/vladislavgg/vladislavgg.github.io/blob/main/5 лабораторная/infoframe.htm">Посмотреть код: infoframe.htm</a>
+                <a class="result-link" target="_blank" href="5 лабораторная/infoframe.htm">Результат</a>
+            </div>
+            <div class="file-row">
+                <a class="file-link" target="_blank" href="https://github.com/vladislavgg/vladislavgg.github.io/blob/main/5 лабораторная/infoframe2.htm">Посмотреть код: infoframe2.htm</a>
+                <a class="result-link" target="_blank" href="5 лабораторная/infoframe2.htm">Результат</a>
+            </div>
+            <div class="file-row">
+                <a class="file-link" target="_blank" href="https://github.com/vladislavgg/vladislavgg.github.io/blob/main/5 лабораторная/menuframe.htm">Посмотреть код: menuframe.htm</a>
+                <a class="result-link" target="_blank" href="5 лабораторная/menuframe.htm">Результат</a>
+            </div>
         </div>
 
         <div id="lab6" class="lab-files">
             <h2>Лабораторная работа №6</h2>
-            <a class="file-link" target="_blank" href="https://github.com/vladislavgg/vladislavgg.github.io/blob/main/6 лабораторная/index.html">Посмотреть код: index.html</a>
-			<a class="file-link" target="_blank" href="https://github.com/vladislavgg/vladislavgg.github.io/blob/main/6 лабораторная/menu.html">Посмотреть код: menu.html</a>
-			<a class="file-link" target="_blank" href="https://github.com/vladislavgg/vladislavgg.github.io/blob/main/6 лабораторная/info_main.html">Посмотреть код: info_main.html</a>
-			<a class="file-link" target="_blank" href="https://github.com/vladislavgg/vladislavgg.github.io/blob/main/6 лабораторная/photo.html">Посмотреть код: photo.html</a>
-			<a class="file-link" target="_blank" href="https://github.com/vladislavgg/vladislavgg.github.io/blob/main/6 лабораторная/video.html">Посмотреть код: video.html</a>
-			<a class="file-link" target="_blank" href="https://github.com/vladislavgg/vladislavgg.github.io/blob/main/6 лабораторная/audio.html">Посмотреть код: audio.html</a>
+            <div class="file-row">
+                <a class="file-link" target="_blank" href="https://github.com/vladislavgg/vladislavgg.github.io/blob/main/6 лабораторная/index.html">Посмотреть код: index.html</a>
+                <a class="result-link" target="_blank" href="6 лабораторная/index.html">Результат</a>
+            </div>
+            <div class="file-row">
+                <a class="file-link" target="_blank" href="https://github.com/vladislavgg/vladislavgg.github.io/blob/main/6 лабораторная/menu.html">Посмотреть код: menu.html</a>
+                <a class="result-link" target="_blank" href="6 лабораторная/menu.html">Результат</a>
+            </div>
+            <div class="file-row">
+                <a class="file-link" target="_blank" href="https://github.com/vladislavgg/vladislavgg.github.io/blob/main/6 лабораторная/info_main.html">Посмотреть код: info_main.html</a>
+                <a class="result-link" target="_blank" href="6 лабораторная/info_main.html">Результат</a>
+            </div>
+            <div class="file-row">
+                <a class="file-link" target="_blank" href="https://github.com/vladislavgg/vladislavgg.github.io/blob/main/6 лабораторная/photo.html">Посмотреть код: photo.html</a>
+                <a class="result-link" target="_blank" href="6 лабораторная/photo.html">Результат</a>
+            </div>
+            <div class="file-row">
+                <a class="file-link" target="_blank" href="https://github.com/vladislavgg/vladislavgg.github.io/blob/main/6 лабораторная/video.html">Посмотреть код: video.html</a>
+                <a class="result-link" target="_blank" href="6 лабораторная/video.html">Результат</a>
+            </div>
+            <div class="file-row">
+                <a class="file-link" target="_blank" href="https://github.com/vladislavgg/vladislavgg.github.io/blob/main/6 лабораторная/audio.html">Посмотреть код: audio.html</a>
+                <a class="result-link" target="_blank" href="6 лабораторная/audio.html">Результат</a>
+            </div>
         </div>
-		
-		<div id="lab7" class="lab-files">
+
+        <div id="lab7" class="lab-files">
             <h2>Лабораторная работа №7</h2>
-            <a class="file-link" target="_blank" href="https://github.com/vladislavgg/vladislavgg.github.io/blob/main/7 лабораторная/index.html">Посмотреть код: index.html</a>
+            <div class="file-row">
+                <a class="file-link" target="_blank" href="https://github.com/vladislavgg/vladislavgg.github.io/blob/main/7 лабораторная/index.html">Посмотреть код: index.html</a>
+                <a class="result-link" target="_blank" href="7 лабораторная/index.html">Результат</a>
+            </div>
         </div>
-		
-		<div id="lab8" class="lab-files">
+
+        <div id="lab8" class="lab-files">
             <h2>Лабораторная работа №8</h2>
-            <a class="file-link" target="_blank" href="https://github.com/vladislavgg/vladislavgg.github.io/blob/main/8 лабораторная/table.html">Посмотреть код: table.html</a>
-			<a class="file-link" target="_blank" href="https://github.com/vladislavgg/vladislavgg.github.io/blob/main/8 лабораторная/blocklayout.html">Посмотреть код: blocklayout.html</a>
-			<a class="file-link" target="_blank" href="https://github.com/vladislavgg/vladislavgg.github.io/blob/main/8 лабораторная/semanticlayout.html">Посмотреть код: semanticlayout.html</a>
+            <div class="file-row">
+                <a class="file-link" target="_blank" href="https://github.com/vladislavgg/vladislavgg.github.io/blob/main/8 лабораторная/table.html">Посмотреть код: table.html</a>
+                <a class="result-link" target="_blank" href="8 лабораторная/table.html">Результат</a>
+            </div>
+            <div class="file-row">
+                <a class="file-link" target="_blank" href="https://github.com/vladislavgg/vladislavgg.github.io/blob/main/8 лабораторная/blocklayout.html">Посмотреть код: blocklayout.html</a>
+                <a class="result-link" target="_blank" href="8 лабораторная/blocklayout.html">Результат</a>
+            </div>
+            <div class="file-row">
+                <a class="file-link" target="_blank" href="https://github.com/vladislavgg/vladislavgg.github.io/blob/main/8 лабораторная/semanticlayout.html">Посмотреть код: semanticlayout.html</a>
+                <a class="result-link" target="_blank" href="8 лабораторная/semanticlayout.html">Результат</a>
+            </div>
         </div>
-		
-		<div id="lab9" class="lab-files">
+
+        <div id="lab9" class="lab-files">
             <h2>Лабораторная работа №9</h2>
-            <a class="file-link" target="_blank" href="https://github.com/vladislavgg/vladislavgg.github.io/blob/main/9 лабораторная/index.html">Посмотреть код: index.html</a>
+            <div class="file-row">
+                <a class="file-link" target="_blank" href="https://github.com/vladislavgg/vladislavgg.github.io/blob/main/9 лабораторная/index.html">Посмотреть код: index.html</a>
+                <a class="result-link" target="_blank" href="9 лабораторная/index.html">Результат</a>
+            </div>
         </div>
+
     </div>
 </body>
 </html>
