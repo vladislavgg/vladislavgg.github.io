@@ -11,6 +11,46 @@
             gap: 60px;
             background-color: #fff;
         }
+
+        .left-side {
+            width: 120px;
+            height: 350px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+            border-right: 1px solid #eee;
+            padding-right: 30px;
+        }
+
+        .ball {
+            width: 50px;
+            height: 50px;
+            background: #ff4757;
+            border-radius: 50%;
+            animation: jump 0.8s infinite alternate ease-in;
+        }
+
+        .shadow {
+            width: 50px;
+            height: 8px;
+            background: rgba(0,0,0,0.1);
+            border-radius: 50%;
+            margin-top: 5px;
+            animation: shadow-anim 0.8s infinite alternate ease-in;
+        }
+
+        @keyframes jump {
+            0% { transform: translateY(-180px); }
+            90% { transform: translateY(0) scaleY(1); }
+            100% { transform: translateY(0) scaleY(0.6); }
+        }
+
+        @keyframes shadow-anim {
+            0% { transform: scale(0.3); opacity: 0.2; }
+            100% { transform: scale(1.2); opacity: 0.5; }
+        }
+        
     </style>
 </head>
 </html>
