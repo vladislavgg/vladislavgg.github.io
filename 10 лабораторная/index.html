@@ -1,1 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Лабораторная работа №10</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+    <input type="checkbox" id="side-checkbox" class="side-checkbox">
+
+    <div class="side-panel">
+        <label for="side-checkbox" class="close-btn">&times;</label>
+        <nav class="side-menu">
+            <ul>
+                <li><a href="#">Профиль</a></li>
+                <li><a href="#">Настройки</a></li>
+                <li><a href="#">Сообщения</a></li>
+                <li><a href="#">Выход</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <header class="header">
+        <div class="container">
+            <div class="logo-section">
+                <label for="side-checkbox" class="side-toggle">☰</label>
+                <div class="logo-circle"></div>
+                <span class="logo-text">LOGO</span>
+            </div>
+            
+            <nav>
+                <ul class="menu">
+                    <li><a href="#">ОБО МНЕ</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">ФОТКИ</a>
+                        <ul class="submenu">
+                            <li><a href="#">ФОТКИ</a></li>
+                            <li><a href="#">ФОТКИ</a></li>
+                            <li><a href="#">ФОТКИ</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">ГАЛЕРЕЯ</a></li>
+                    <li><a href="#">ХОББИ</a></li>
+                    <li><a href="#">HALLO</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="hero-section">
+            <div class="hero-text">
+                <h1>Меня зовут Влад!</h1>
+                <a href="#" class="btn-primary">Узнать его</a>
+            </div>
+            
+            <div class="slider-container">
+                <div class="slidar-middle">
+                    <div class="slidas">
+                        <input type="radio" name="r" id="r1" checked>
+                        <input type="radio" name="r" id="r2">
+                        <input type="radio" name="r" id="r3">
+                        
+                        <div class="slida s1">
+                            <div class="placeholder-img">Слайд 1</div>
+                        </div>
+                        <div class="slida">
+                            <div class="placeholder-img" style="background: #bbb;">Слайд 2</div>
+                        </div>
+                        <div class="slida">
+                            <div class="placeholder-img" style="background: #999;">Слайд 3</div>
+                        </div>
+                    </div>
+
+                    <div class="navigation">
+                        <label for="r1" class="bar"></label>
+                        <label for="r2" class="bar"></label>
+                        <label for="r3" class="bar"></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
